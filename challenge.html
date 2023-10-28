@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Kalkulator</title>
+</head>
+<body>
+    <h1>Kalkulator</h1>
+    <input type="text" id="angka1" placeholder="Angka 1">
+    <input type="text" id="angka2" placeholder="Angka 2">
+    <br>
+    <button onclick="tambah()">Tambah (+)</button>
+    <button onclick="kurang()">Kurang (-)</button>
+    <button onclick="kali()">Kali (*)</button>
+    <button onclick="bagi()">Bagi (/)</button>
+    <button onclick="modulus()">Modulus (%)</button>
+    <br>
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        function tambah() {
+            var angka1 = parseInt(document.getElementById("angka1").value);
+            var angka2 = parseInt(document.getElementById("angka2").value);
+            var hasil = angka1 + angka2;
+            document.getElementById("hasil").innerText = hasil;
+        }
+
+        function kurang() {
+            var angka1 = parseInt(document.getElementById("angka1").value);
+            var angka2 = parseInt(document.getElementById("angka2").value);
+            var hasil = angka1 - angka2;
+            document.getElementById("hasil").innerText = hasil;
+        }
+
+        function kali() {
+            var angka1 = parseInt(document.getElementById("angka1").value);
+            var angka2 = parseInt(document.getElementById("angka2").value);
+            var hasil = angka1 * angka2;
+            document.getElementById("hasil").innerText = hasil;
+        }
+
+        function bagi() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            if (angka2 === 0) {
+                document.getElementById("hasil").innerText = "Tidak dapat dibagi dengan 0";
+            } else {
+                var hasil = angka1 / angka2;
+                document.getElementById("hasil").innerText = hasil;
+            }
+        }
+
+        function modulus() {
+            var angka1 = parseFloat(document.getElementById("angka1").value);
+            var angka2 = parseFloat(document.getElementById("angka2").value);
+            if (angka2 === 0) {
+                document.getElementById("hasil").innerText = "Tidak dapat menghitung modulus dengan 0";
+            } else {
+                var hasil = angka1 % angka2;
+                document.getElementById("hasil").innerText = hasil;
+            }
+        }
+    </script>
+</body>
+</html>
